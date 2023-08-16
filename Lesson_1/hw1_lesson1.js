@@ -63,3 +63,11 @@ console.log(typeof c);
 
 
 // hw part 4
+let nameUser=prompt('enter your name');
+console.log(nameUser)
+
+let lastname=prompt('enter your last name');
+console.log(lastname)
+
+let age=prompt('enter your age');
+console.log(age)
