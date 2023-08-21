@@ -14,6 +14,17 @@ let cars = [
     "honda"
 ];
 console.log(cars);
+console.log(cars[0]);
+console.log(cars[1]);
+console.log(cars[2]);
+console.log(cars[3]);
+console.log(cars[4]);
+console.log(cars[5]);
+console.log(cars[6]);
+console.log(cars[7]);
+console.log(cars[8]);
+console.log(cars[9]);
+
 
 //Створити 3 об'єкти які описують книги.
 let book1 = {
@@ -39,7 +50,16 @@ console.log(book3);
 
 
 //Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом.
-
+//another way to add authors as array into object
+//  let book3 = {
+//     title: 'Happy Place',
+//     pagecount: 400,
+//     genre: 'romance'
+//     authors: [
+//          {name:'antonio', age:32},
+//          {name:'gary', age:40}   ]
+// };
+// console.log(book3);
 
 book1['authors'] = [{name: 'F. Scott Fitzgerald', age: 127}];
 console.log(book1);
@@ -89,8 +109,17 @@ else {
     console.log('Correct');
 }
 
-
-
+let x1= 1;
+if (x1 === 0) {
+    console.log('Incorrect');
+}
+else {
+    console.log('Correct');
+}
+//or this way
+x1 === 0
+    ? console.log('incorrect')
+    : console.log('correct');
 
 
 //- Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число (в першу, другу, третю или четверту частину години).
@@ -159,18 +188,22 @@ switch (schedule) {
 // Потрібно знайти та вивести максимальне число з тих двох .
 // Також потрібно врахувати коли введені рівні числа.
 
-let f = 24;
-let d  =  23;
+let n1 = 24;
+let n2  =  23;
 
-if (f===d){
+if (n1 === n2){
     console.log('equal');
 }
-else if (f>d) {
-    console.log(f);
+else if (n1>n2) {
+    console.log(n1);
 }
-else {
-    console.log(d);
+else if (n1<n2){
+    console.log(n2);
 }
+else{
+    console.error('Error');
+}
+
 
 let r = 22;
 let k  =  23;
@@ -198,6 +231,21 @@ if (x ==='null' || x === 'underfiend' || x === '' || x === false || x === 'NaN' 
     console.log(x);
 }
 
+//or
+let a1 = 0;
+a1 = a1 || 'default';
+console.log(a1);
+
+
+//or
+let xx1 = false;
+if (!xx1){
+    xx1='default';
+    console.log('ccc', xx1);
+}
+else    {
+    console.log(xx1)
+}
 
 //- з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 let coursesAndDurationArray = [
@@ -210,41 +258,25 @@ let coursesAndDurationArray = [
 ];
 
 if (coursesAndDurationArray[0].monthDuration > 5){
-    console.log('super');
-}
-else  {
-    console.log('not good')
+    console.log('super!!!');
 }
 
 if (coursesAndDurationArray[1].monthDuration > 5){
-    console.log('super');
+    console.log('super!!!');
 }
-else  {
-    console.log('not good')
-}
+
 if (coursesAndDurationArray[2].monthDuration > 5){
-    console.log('super');
+    console.log('super!!!');
 }
-else  {
-    console.log('not good')
-}
+
 if (coursesAndDurationArray[3].monthDuration > 5){
-    console.log('super');
-}
-else  {
-    console.log('not good')
+    console.log('super!!!');
 }
 
 if (coursesAndDurationArray[4].monthDuration > 5){
-    console.log('super');
-}
-else  {
-    console.log('not good')
+    console.log('super!!!');
 }
 
 if (coursesAndDurationArray[5].monthDuration > 5){
-    console.log('super');
-}
-else  {
-    console.log('not good')
+    console.log('super!!!');
 }
