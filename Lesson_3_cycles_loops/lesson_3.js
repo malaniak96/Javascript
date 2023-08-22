@@ -104,7 +104,7 @@ for (const userr of userss) {
 // while
 
 let i=0;
-while (i <userss.length){
+while (i < userss.length){
     let userr = userss[i];
     console.log(userr);
     i++;
