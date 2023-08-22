@@ -90,7 +90,7 @@ for (const userr of userss) {
 
 
     console.log(userr);
-    for (const field in userr) {
+    for (const field in userr) { //for in
         console.log(userr[field]); // дає --> 1 anna 28 true
         //console.log(field); дає тільки --> id name afe status
     }
@@ -103,7 +103,7 @@ for (const userr of userss) {
 
 // while
 
-let i=0;
+let i= 0;
 while (i < userss.length){
     let userr = userss[i];
     console.log(userr);
