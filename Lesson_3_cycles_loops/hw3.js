@@ -3,34 +3,16 @@
 let array=[
     {},
 ];
-for (let i = 0; i < array.length; i++) {
-    document.write(`<div>Okten School – це школа програмування, яка пропонує ефективні IT курси у Львові, Києві та онлайн по всьому світу.</div>`);
-    document.write(`<div>Якість навчання підтверджуємо відео відгуками працевлаштованих випускників та задоволених роботодавців.</div>`);
-    document.write(`<div>Школа заснована при IT-компанії, яка спеціалізується на розробці веб-продуктів та мобільних додатків для закордонних і вітчизняних клієнтів.</div>`);
-    document.write(`<div>Викладачі, які проводять заняття – досвідчені фахівці своєї галузі, які працюють з реальними IT-проектами та готові ділитися своїми знаннями та досвідом."</div>`);
-    document.write(`<div>Школа програмування OKTEN - єдина в Україні, хто має відео відгуки працевлаштованих студентів в такій кількості</div>`);
-    document.write(`<div>І це тільки початок, адже наші випускники та їх досягнення говорять самі за себе.</div>`);
-    document.write(`<div>Школа програмування Okten - єдина, що має відгуки від роботодавців, які входять до списку найкращих компаній DOU.UA.</div>`);
-    document.write(`<div>А випускники курсів отримують гарантії працевлаштування після успішного закінчення навчання. </div>`);
-    document.write(`<div>Але зазвичай їх забирають до себе наші офіційні партнери ще до закінчення курсу.</div>`);
-    document.write(`<div>OKTEN THE BEST</div>`);
+for (let i = 0; i < 10; i++) {
+    document.write(`<div>Okten School – це школа програмування, яка пропонує ефективні IT курси у Львові, Києві та онлайн по всьому світу.Якість навчання підтверджуємо відео відгуками працевлаштованих випускників та задоволених роботодавців.Школа заснована при IT-компанії, яка спеціалізується на розробці веб-продуктів та мобільних додатків для закордонних і вітчизняних клієнтів.Викладачі, які проводять заняття – досвідчені фахівці своєї галузі, які працюють з реальними IT-проектами та готові ділитися своїми знаннями та досвідом."</div>`);
 }
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 let text=[
     {},
 ];
-for (let i = 0; i < text.length; i++) {
-    document.write(`<div> ${text[i]},OKTEN </div>`);
-    document.write(`<div>${text[i]}, SCHOOL </div>`);
-    document.write(`<div>${text[i]}, CLASS OF JUNE 2023</div>`);
-    document.write(`<div>${text[i]}, JAVASCRIPT </div>`);
-    document.write(`<div>${text[i]}, STUDENT: OLGA MALANIAK</div>`);
-    document.write(`<div>${text[i]}, JS LESSON CURRENTLY</div>`);
-    document.write(`<div>${text[i]},LECTURE 3</div>`);
-    document.write(`<div>${text[i]}, FOR LOOPS </div>`);
-    document.write(`<div>${text[i]}, AND CYCLES</div>`);
-    document.write(`<div>${text[i]}, HW#3 IN PROGRESS</div>`);
+for (let i = 0; i < 10; i++) {
+    document.write(`<div>${[i]}. OKTEN SCHOOL CLASS OF JUNE 2023</div>`);
 }
 
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
@@ -39,30 +21,9 @@ let box=[
     {},
 ];
 let i = 0;
-while ( i < box.length) {
+while ( i < 20) {
     i++;
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-    document.write(`<div><h1>${box}, SCHOOL</h1></div>`);
-    document.write(`<div><h1>${box}, OKTEN</h1></div>`);
-
+    document.write(`<div><h1>${[i]}. JAVASCRIPT</h1></div>`);
 }
 
 
@@ -93,18 +54,12 @@ let listOfItems = [
     'node.js',
 ];
 
-for (let i = 0; i < listOfItems.length - 7; i++) {
-    document.write(`<h2>LIST:</h2> <ul> ${listOfItems}
-                        <li>${listOfItems[0]}</li>
-                        <li>${listOfItems[1]}</li>
-                        <li>${listOfItems[2]}</li>
-                        <li>${listOfItems[3]}</li>
-                        <li>${listOfItems[4]}</li>
-                        <li>${listOfItems[5]}</li>
-                        <li>${listOfItems[6]}</li>
-                        <li>${listOfItems[7]}</li>     
-                    </ul>`);
+document.write(`<h2>LIST:</h2> <ul>`);
+
+for (let i = 0; i < listOfItems.length; i++) {
+    document.write(`<li>${listOfItems[i]}</li>`);
 }
+document.write(`</ul>`);
 
 //Використовуючи данні з масиву, за допомоги document.write та циклу
 // побудувати структуру по шаблону
