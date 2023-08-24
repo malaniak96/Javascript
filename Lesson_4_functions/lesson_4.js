@@ -1,7 +1,7 @@
 
 
 //FUNCTIONS
-let users1=[
+let users1= [
     {id: 1, name: 'petya', age: 31, status: false},
     {id: 1, name: 'anna', age: 28, status: true},
     {id: 1, name: 'max', age: 26, status: false},
