@@ -68,7 +68,7 @@ function foo1(asd){
    let result = 0;
 
    for (const number of arr){
-       result = result +number;
+       result = result + number;
    }
    console.log('result : ', result);
 }

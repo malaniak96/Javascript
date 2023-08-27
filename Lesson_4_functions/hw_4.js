@@ -1,4 +1,4 @@
-//todo- створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+//DONE створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 // area of rectangle is A=wl
 function rectangleArea(width, length) {
     return width * length;
@@ -17,7 +17,7 @@ let pi = 3.14;
 let cArea = circleArea (9);
 console.log('The area of the circle is: ', cArea);
 
-// todo- створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+//DONE створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 // are of a cylinder A=2πrh+2πr2
 
 function cylinderArea (radius, height){
@@ -29,7 +29,7 @@ console.log('The area of the circle is: ', cylArea);
 
 
 
-//todo - створити функцію яка приймає масив та виводить кожен його елемент
+// TODO- створити функцію яка приймає масив та виводить кожен його елемент
 let schedule = [
     {title: 'scrum', dates: 'july 3 - july 10'},
     {title: 'html', dates: 'july 11 - july 28'},
@@ -46,9 +46,7 @@ function printerArray (array){
 printerArray(schedule);
 
 
-
-
-// todo - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+// DONE - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 function writer(paragraphtext){
 document.write(`<div>
                 <p>${paragraphtext}</p>
@@ -61,8 +59,8 @@ writer(`Якість навчання підтверджуємо відео ві
 
 
 
-//todo - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-//todo - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+//- створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+
 function list(listText){
     document.write(`<ul>
         <li>${listText}</li>
@@ -73,27 +71,34 @@ function list(listText){
 list('The night is beautiful,So the faces of my people. The stars are beautiful, So the eyes of my people. Beautiful, also, is the sun. Beautiful, also, are the souls of my people.');
 
 
+//DONE - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
+
+function list2(listText, num){
+
+    document.write(`<ul>`);
+    for (let i = 0; i < num; i++) {
+        document.write(`<li>${listText}</li>`);
+    }
+    document.write(`</ul>`);
+}
+
+list2('The night is beautiful,So the faces of my people. The stars are beautiful, So the eyes of my people. Beautiful, also, is the sun. Beautiful, also, are the souls of my people.', 3);
 
 
 
 
+//DONE- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
+function foo (...arr){
+    return  arr;
+}
+const k = foo( 28, 'olga', 'malaniak', true);
+console.log(k);
 
 
 
-
-
-
-
-// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-
-
-
-
-
-
-
-
-// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+//todo - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
 let users= [
     {name: 'petya', age: 31, status: false},
@@ -116,39 +121,70 @@ function user (array) {
 }
 user(users);
 
+//OR
+
+function foo2 (id, name, age ){
+    return;
+}
+
+let g = foo2( 1, 'kolya', 27);
+console.log(g);
 
 
-// - створити функцію яка повертає найменьше число з масиву
+// DONE створити функцію яка повертає найменьше число з масиву
+ let numberArray = [2, 1, 5, 6, 8, 10, 5];
+ function minNumber(array2) {
+     let min = array2[0];
+     for (let i = 1; i < array2.length; i++){
+        if (array2[i] < min) {
+            min = array2[i];
+         }
+    }
+     return min;
+ }
+console.log(minNumber(numberArray));
 
 
 
+// DONE - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+const sumArray = [1, 2, 10];
+function sum (array) {
+    let sum = 0;
+
+    for (let i= 0; i < array.length; i++){
+        sum += array[i];
+    }
+    return sum;
+}
+
+console.log(sum(sumArray));
 
 
-// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 
-
-
-
-
-// - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
-
-
-
-
-
+// DONE створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
+let arr1 = [11, 22, 33, 44];
+function swapElements(arr, i1, i2, i3) {
+    let temp = arr[i1];
+    arr[i1] = arr[i2];
+    arr[i2] = temp;
+}
 
-
+swapElements(arr1, 0, 1);
+console.log(arr1);
 
 // todo- Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // todo Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
-function exchange(sumUAH, currency, currencyValue){
-        return sumUAH / currencyValue;
-}
-let USD = exchange(1000, 'USD', 36.56);
-let EURO = exchange(1000, 'EURO', 40.50);
-console.log('Exchange amount: ', USD, 'USD');
-console.log('Exchange amount: ', EURO, 'EURO');
 
+function exchange(sumUAH, currencyValues, exchangeCurrency) {
+
+    for (let item of currencyValues){
+            if (currency === 'USD') {
+                return sumUAH / currencyValues, exchangeCurrency;
+            }
+    }
+        }
+     let b = exchange(10000, [{currency:'USD',value:40},{currency:'EUR',value:42}],'USD');
+     console.log(b);
