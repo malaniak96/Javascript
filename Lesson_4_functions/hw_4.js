@@ -47,14 +47,14 @@ printerArray(schedule);
 
 
 // DONE - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-function writer(paragraphtext){
+function writer1(paragraphtext){
 document.write(`<div>
                 <p>${paragraphtext}</p>
                 </div>`
 );
 }
-writer('Okten School – це школа програмування, яка пропонує ефективні IT курси у Львові, Києві та онлайн по всьому світу. Якість навчання підтверджуємо відео відгуками працевлаштованих випускників та задоволених роботодавців.');
-writer(`Якість навчання підтверджуємо відео відгуками працевлаштованих випускників та задоволених роботодавців. Школа заснована при IT-компанії, яка спеціалізується на розробці веб-продуктів та мобільних додатків для закордонних і вітчизняних клієнтів.`);
+writer1('Okten School – це школа програмування, яка пропонує ефективні IT курси у Львові, Києві та онлайн по всьому світу. Якість навчання підтверджуємо відео відгуками працевлаштованих випускників та задоволених роботодавців.');
+writer1(`Якість навчання підтверджуємо відео відгуками працевлаштованих випускників та задоволених роботодавців. Школа заснована при IT-компанії, яка спеціалізується на розробці веб-продуктів та мобільних додатків для закордонних і вітчизняних клієнтів.`);
 
 
 
@@ -100,35 +100,15 @@ console.log(k);
 
 //todo - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
-let users= [
-    {name: 'petya', age: 31, status: false},
-    {name: 'anna', age: 28, status: true},
-    {name: 'max', age: 26, status: false},
-    {name: 'olya', age: 18, status: true},
-    {name: 'hrystia', age: 17, status: false},
-    {name: 'petya', age: 31, status: false},
-    {name: 'petya', age: 31, status: false},
-    {name: 'anna', age: 28, status: true},
-    {name: 'max', age: 26, status: false},
-    {name: 'olya', age: 18, status: true},
-    {name: 'hrystia', age: 17, status: false},
-];
 
-function user (array) {
-    for (const item of array){
-        console.log(item);
+function writer (id, name, age){
+
+    for (let i = 0; i < 1; i++) {
+        document.write(`<div> id: ${id} </div> <div> name: ${name} </div> <div> age: ${age}</div>`);
     }
-}
-user(users);
+    }
 
-//OR
-
-function foo2 (id, name, age ){
-    return;
-}
-
-let g = foo2( 1, 'kolya', 27);
-console.log(g);
+writer (2, 'serhii', 32);
 
 
 // DONE створити функцію яка повертає найменьше число з масиву
@@ -165,7 +145,7 @@ console.log(sum(sumArray));
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
 let arr1 = [11, 22, 33, 44];
-function swapElements(arr, i1, i2, i3) {
+function swapElements(arr, i1, i2) {
     let temp = arr[i1];
     arr[i1] = arr[i2];
     arr[i2] = temp;
@@ -174,15 +154,15 @@ function swapElements(arr, i1, i2, i3) {
 swapElements(arr1, 0, 1);
 console.log(arr1);
 
-// todo- Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
-// todo Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+// DONE - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+// Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
 
 function exchange(sumUAH, currencyValues, exchangeCurrency) {
 
     for (let item of currencyValues){
-            if (currency === 'USD') {
-                return sumUAH / currencyValues, exchangeCurrency;
+            if (item.currency === exchangeCurrency) {
+                return sumUAH / item.value;
             }
     }
         }
