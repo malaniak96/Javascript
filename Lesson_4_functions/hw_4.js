@@ -46,6 +46,9 @@ function printerArray (array){
 printerArray(schedule);
 
 
+
+
+
 // DONE - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 function writer1(paragraphtext){
 document.write(`<div>
@@ -100,16 +103,17 @@ console.log(k);
 
 //todo - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
-
-function writer (id, name, age){
-
-    for (let i = 0; i < 1; i++) {
-        document.write(`<div> id: ${id} </div> <div> name: ${name} </div> <div> age: ${age}</div>`);
+let arr2 = [
+    {id: 1, name:'marta', age: 7},
+    {id: 2, name:'lesya', age: 8},
+    {id: 3, name:'sveta', age: 5},
+];
+function writer (arr){
+    for (let arrElement of arr) {
+        document.write(`<div> id: ${arrElement.id}  name: ${arrElement.name} age: ${arrElement.age}</div>`);
     }
     }
-
-writer (2, 'serhii', 32);
-
+    writer(arr2);
 
 // DONE створити функцію яка повертає найменьше число з масиву
  let numberArray = [2, 1, 5, 6, 8, 10, 5];
