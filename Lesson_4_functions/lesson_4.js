@@ -1,6 +1,4 @@
 
-
-//FUNCTIONS
 let users1= [
     {id: 1, name: 'petya', age: 31, status: false},
     {id: 1, name: 'anna', age: 28, status: true},
@@ -14,6 +12,8 @@ let users1= [
     {id: 1, name: 'olya', age: 18, status: true},
     {id: 1, name: 'hrystia', age: 17, status: false},
 ];
+//FUNCTIONS
+
 
 let users2 = [
     {id: 1, name: 'petya', age: 31, status: false},

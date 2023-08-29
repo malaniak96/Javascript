@@ -9,7 +9,7 @@ let rArea = rectangleArea(6,5);
 console.log('The area of the rectangle is: ', rArea);
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
-//area of the circle is A = πr2
+//area of the circle is A = πr^2
 function circleArea (radius){
     return pi * radius * radius;
 }
@@ -18,7 +18,7 @@ let cArea = circleArea (9);
 console.log('The area of the circle is: ', cArea);
 
 //DONE створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-// are of a cylinder A=2πrh+2πr2
+// are of a cylinder A=2πrh+2πr^2
 
 function cylinderArea (radius, height){
     return 2 * Math.PI * radius * height + 2 * Math.PI * radius * radius;
@@ -93,11 +93,17 @@ list2('The night is beautiful,So the faces of my people. The stars are beautiful
 
 //DONE- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
-function foo (...arr){
-    return  arr;
+let array8 = [
+    { age: 28, name: 'olga', lastname: 'malaniak', status: true},
+    { age: 28, name: 'katya', lastname: 'voronina', status: false},
+];
+function foo (arr4){
+    for ( let arrItem of arr4) {
+        document.write(`<ul> <li>age: ${arrItem.age}</li> <li>name: ${arrItem.name}</li>  <li>lastname:  ${arrItem.lastname}</li> <li>status: ${arrItem.status}</li></ul>`)
+    }
 }
-const k = foo( 28, 'olga', 'malaniak', true);
-console.log(k);
+foo( array8);
+
 
 
 
@@ -119,7 +125,7 @@ function writer (arr){
  let numberArray = [2, 1, 5, 6, 8, 10, 5];
  function minNumber(array2) {
      let min = array2[0];
-     for (let i = 1; i < array2.length; i++){
+     for (let i = 0; i < array2.length; i++){
         if (array2[i] < min) {
             min = array2[i];
          }
