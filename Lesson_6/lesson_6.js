@@ -25,7 +25,7 @@ console.log(token.endsWith('3'));
 // можна перевіряти з чого закінчується стрінга - реверсивний метод
 
 
-
+//todo SPLIT IndexOF SUBSTRING
 let str1 = 'hello world !!!';
 let indexofSpace = str1.indexOf(' ');
 
@@ -124,7 +124,7 @@ console.log('hello okten'.includes('okt'));
 //todo REVERSE
 //реверсує масив
 
-let reverse =arr3.reverse();
+let reverse = arr3.reverse();
 console.log(reverse);
 
 
@@ -154,7 +154,7 @@ let filter = array.filter(value => value % 2 === 0);
 console.log(filter);
 
 
-//todo
+//todo FILTER
 let users= [
     {name: 'petya', age: 31, status: false},
     {name: 'anna', age: 28, status: true},
@@ -180,19 +180,26 @@ console.log(filter1);
 //{name, age, status}
 //{name, age, status, id}
 
-function uuuidv4 () {
-
+function uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
 }
+
 
 
 let usersWithId = [];
 for (const user of users) {
-    user.id = uuuidv4();
+    user.id = uuidv4();
     usersWithId.push(user);
 }
 console.log(usersWithId);
 
-
+let map4 = users.map(function (u){
+    u.id = uuidv4();
+    return u;
+});
+console.log(map4);
 
 
 let map = users.map(value => {
