@@ -28,12 +28,12 @@ console.log(token.endsWith('3'));
 //todo SPLIT IndexOF SUBSTRING
 let str1 = 'hello world !!!';
 let indexofSpace = str1.indexOf(' ');
+console.log(indexofSpace);
 
 console.log(str1.charAt(6));
-
 console.log(str1[0]);
-console.log(str1.substring(0, 4));
-console.log(indexofSpace);
+console.log(str1.substring(0, 3));
+
 
 let split = str1.split(' ');
 console.log(split);
@@ -71,13 +71,17 @@ console.log(replaceAll);
 
 let arr =[];
 console.log(arr);
+
 let newSizeofArray = arr.push('asd');
 console.log(arr, newSizeofArray);
+
 arr.unshift('kokos');
 console.log(arr);
+
 let shiftElement = arr.shift();
 console.log(shiftElement);
 console.log(arr);
+
 let popedElement = arr.pop();
 console.log(popedElement);
 console.log(arr);
@@ -104,7 +108,7 @@ console.log(foo);
 
 let arr2 = [11, 22, 33, 44, 55, 66, 77, 88];
 
-let pieSlice = arr2.slice(1,5);
+let pieSlice = arr2.slice(1, 5);
 console.log(arr2);
 console.log(pieSlice);
 console.log(arr2);
@@ -133,8 +137,10 @@ console.log(reverse);
 
 let array = [11, 22, 33, 44, 55, 66, 77, 88];
 
-array.forEach(() => console.log('hello')); // 8 items
-array.forEach((x) => console.log(x)); // all numbers are shown
+array.forEach(() => console.log('hello'));
+// 8 items
+array.forEach((x) => console.log(x));
+// all numbers are shown
 // starts a cycle for each element of array: (x) => console.log(x)
 
 

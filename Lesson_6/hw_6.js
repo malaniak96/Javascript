@@ -37,6 +37,9 @@ let replaceAll = dirty
     .replaceAll('  ', '');
 console.log(replaceAll);
 
+let dirty2 = ' dirty string   ';
+let trim = dirty2.trim(' ');
+console.log(trim);
 
 
 
@@ -106,15 +109,12 @@ let coursesAndDurationArr = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}
 ];
-function uuidv4() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-}
+let id = "id" + Math.floor(Math.random()*100);
+console.log(id);
 
 let map = coursesAndDurationArr.map(function (u){
-    u.id = uuidv4();
-    return u;
+    u.id = id;
+    return {id: u.id, title: u.title, monthDurantion: u.monthDuration};
 });
 console.log(map);
 
