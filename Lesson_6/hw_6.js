@@ -65,14 +65,19 @@ console.log(strings);
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]
 let nums = [11 , 21, 3];
-let sortNumsAscending = nums.sort((num1, num2) => {
-    return num1 - num2;
-});
-console.log(sortNumsAscending);
-let sortNumsDescending = nums.sort((num1, num2) => {
-    return num2 - num1;
-});
-console.log(sortNumsDescending);
+let sortNums = (nums, key) => {
+    if (key === 'ascending'){
+        nums.sort((num1, num2) => {
+            return num1 - num2;
+        });
+    } else if (key === 'descending'){
+    nums.sort((num1, num2) => {
+        return num2 - num1;
+    });}
+    return nums;
+};
+    console.log(sortNums(nums, 'ascending'));
+    console.log(sortNums(nums, 'descending'));
 
 
 
@@ -170,7 +175,7 @@ let cardsDeck = [
 ];
 
 //  - знайти піковий туз
-let aceSpades = cardsDeck.filter(card => card.cardsuit === 'spade' && card.value === 'Ace');
+let aceSpades = cardsDeck.find(card => card.cardsuit === 'spade' && card.value === 'Ace');
 console.log(aceSpades);
 
 //  - всі шістки
@@ -186,7 +191,7 @@ let allDiamonds = cardsDeck.filter(diamonds => diamonds.cardsuit === 'diamond');
 console.log(allDiamonds);
 
 //  - всі трефи від 9 та більше
-let trefy = cardsDeck.filter( tcards => tcards.cardsuit === 'clubs' && tcards.value > '9');
+let trefy = cardsDeck.filter( tcards => tcards.cardsuit === 'clubs' && tcards.value >= '9');
 console.log(trefy);
 
 
