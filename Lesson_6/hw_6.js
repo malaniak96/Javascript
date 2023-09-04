@@ -78,7 +78,7 @@ let sortNums = (nums, key) => {
 };
     console.log(sortNums(nums, 'ascending'));
     console.log(sortNums(nums, 'descending'));
-
+//
 
 
 
