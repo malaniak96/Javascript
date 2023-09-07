@@ -83,7 +83,7 @@ let user = [
     {name:'marta', username:'martaluch22', password: 'lvivcity5656@@'},
     {name:'lesya', username:'lesyavasylivna87', password: 'drovitylife22'},
     {name:'sveta', username:'svetarod99', password: '5dhhf'},
-]
+];
 console.log(user[0].password);
 console.log(user[1].password);
 console.log(user[2].password);
@@ -141,8 +141,8 @@ else if (time >= 45 && time <= 59){
 
 //- У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
 
-let day = prompt('pick a day of the month from 1 to 31');
-if (day >= 1 && time <= 10) {
+let day = 3;
+if (day >= 1 && day <= 10) {
     console.log( 'decade 1');
 }
 else if (day >= 11 && day <= 20) {
