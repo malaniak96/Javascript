@@ -116,6 +116,7 @@ let coursesAndDurationArr = [
 ];
 let id = "id" + Math.floor(Math.random()*100);
 console.log(id);
+//to generate id numbers
 
 let map = coursesAndDurationArr.map(function (u){
     u.id = id;

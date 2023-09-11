@@ -29,50 +29,97 @@ itLanguages(['html','css', 'java', 'js', 'node.js']);
 
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-
-
-
-
+let paragraph = (paragraphText) => {
+    document.write(`<p>${paragraphText}</p>`)
+}
+paragraph('Olga Malaniak will become a new JS specialist!!!!!!!!!!!!!!!!!!!!');
 
 
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 
 
-
-
-
-
+let list = (text) => {
+    for (let i = 0; i < 3; i++) {
+       document.write(`<ul>
+            <li>${text}</li>
+</ul>`);}
+}
+list('lorem ipsum');
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
+let list2 = (text2, count) => {
 
-
+    document.write(`<ul>lorem:`);
+    for (let i = 0; i < count; i++) {
+        document.write(` <li>${text2}</li>`);
+    }
+    document.write(`</ul>`);
+}
+list2('lorem ipsum lorem ipsum', 3);
 
 
 
 
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+let schedule = [
+    {title: 'scrum', dates: 10, status: true},
+    {title: 'html', dates: 28, status: false},
+    {title: 'js', dates: 50, status: false},
+    {title: 'mysql, mongoDB', dates: 100, status: true},
+    {title: 'front/react', dates: 80, status: true},
+    ];
 
+let theList = (array) =>{
+    for (const arrayElement of array) {
+        document.write(`<ul>
+                        <li>title: ${arrayElement.title}</li>
+                        <li>dates: ${arrayElement.dates}</li>
+                        <li>status: ${arrayElement.status}</li>
+                        </ul>`);
 
-
-
+    }
+}
+theList(schedule);
 
 
 
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-
-
-
-
+let users = [
+    {id: 1, name: 'vasya', age: 40},
+    {id: 2, name: 'olya', age: 28},
+    {id: 3, name: 'katya', age: 15},
+];
+ let people = (array2) => {
+     for (const person of array2) {
+         document.write(`<div>
+                        id: ${person.id}
+                        name: ${person.name}
+                        age: ${person.age}
+                        </div>`)
+     }
+ }
+people(users);
 
 
 // - створити функцію яка повертає найменьше число з масиву
+let manyNumbers = [2, 5, 0.1, 100, 20, 60, 0.02, 8, 50];
 
+let numbers = (array) => {
+    let minNumber = array[0];
 
+    for (const numElement of array) {
+    if (minNumber > numElement){
+        minNumber = numElement;
+    }
+    }
+    return minNumber;
+}
+console.log(numbers(manyNumbers));
 
 
 
