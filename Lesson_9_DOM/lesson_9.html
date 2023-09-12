@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>DOM title</h1>
+<ul class="menu" id="list-1">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+    <li>item 5</li>
+</ul>
+<ul class="menu" id="list-2">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+    <li>item 5</li>
+</ul>
+
+<div class="target"></div>
+
+
+
+<script>
+console.log(document);
+console.log(document.head);
+console.log(document.body);
+
+//todo ID
+let ul1 = document.getElementById('list-1');
+console.log(ul1);
+
+console.log(ul1.classList);
+ul1.classList.add('newclass');
+
+ul1.style.background = 'silver';
+
+
+//todo CLASS - повернеться масив
+let uList = document.body.getElementsByClassName('menu');
+console.log(uList); // повертається масив
+for (const ul of uList) {
+
+    console.log(ul);
+}
+
+//todo TAG
+let liList = document.body.getElementsByTagName('li');
+console.log(liList);
+
+let liList2 = ul1.getElementsByTagName('li');
+for (const li in liList2) {
+    console.log(li.innerText);
+   // li.innerText = 'addfdadfds';
+}
+
+////////////////////////////////////////////////////////
+
+let targets = document.getElementsByClassName('target');
+let div = targets[0];
+console.log(div);
+//div.innerText = '<h2>xxxx</h2>';
+
+//////////////////////////////////////////////////////////
+let lis = document.querySelectorAll('.menu:first-of-type > li');
+console.log(lis);
+
+//todo NODE LIST -psedo array
+//node - type
+let ul2 = document.getElementsByClassName('menu')[0];
+console.log(ul2.children);
+console.log(ul2.childNodes);
+
+
+
+///////////////////////////////////////////////////////////////
+let p = document.createElement('p');
+p.innerText = 'lorem sdjhfdshhdhj jfdhs sdfsdf';
+p.classList.add('xxx');
+p.setAttribute('id', 'idxxx');
+
+console.log(p);
+
+
+//document.body.appendChild(p);
+let target =  document.getElementsByClassName('target')[0];
+
+target.append(p, p.cloneNode(true), p.cloneNode());
+cloneNode.innerText = 'ooo';
+//target.appendChild(p);
+//target.appendChild(p.cloneNode(true));
+
+///////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

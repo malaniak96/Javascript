@@ -118,10 +118,11 @@ function Car (model, manufacturer, year, maxSpeed, enginePower ){
 }
 let driver = {driverName: 'Petro Sheremeta', drivingExperience: 10 };
 let car = new Car('GLA', 'mercedes-benz', '2021', 205, '221 horsepower');
-console.log(car);
 car.drive();
 car.increaseMaxSpeed(20);
 car.addDriver(driver);
+car.info();
+console.log(car);
 
 
 
@@ -163,11 +164,10 @@ class Car2 {
 
 let driver2 = {driverName: 'Petro Sheremeta', drivingExperience: 10 };
 let car2 = new Car2('GLA', 'mercedes-benz', '2021', 205, '221 horsepower');
-console.log(car);
 car2.drive();
 car2.increaseMaxSpeed(20);
 car2.addDriver(driver2);
-
+console.log(car);
 
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
@@ -175,17 +175,7 @@ car2.addDriver(driver2);
 // За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 // Докудатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбе
 
-let cinderellas = [
-    {name: 'jessica', age: 20, shoeSize: 5},
-    {name: 'merciella', age: 21, shoeSize: 6},
-    {name: 'ariel', age: 22, shoeSize: 7},
-    {name: 'lowella', age: 24, shoeSize: 4.5},
-    {name: 'helga', age: 17, shoeSize: 4},
-    {name: 'julieta', age: 19, shoeSize: 6},
-    {name: 'olivia', age: 18, shoeSize: 7.5},
-    {name: 'jennifer', age: 21, shoeSize: 5.5},
-    {name: 'kate', age: 23, shoeSize: 8},
-];
+
 class Cinderella {
     constructor(name, age, shoeSize) {
         this.name = name;
@@ -201,6 +191,19 @@ class Prince {
         this.shoeFound = shoeFound;
     }
 }
+
+let cinderellas = [];
+cinderellas.push(new Cinderella ('jessica', 20, 5));
+cinderellas.push(new Cinderella ('merciella', 21, 6));
+cinderellas.push(new Cinderella ('ariel', 22, 7));
+cinderellas.push(new Cinderella ('lowella', 24, 4.5));
+cinderellas.push(new Cinderella ('helga', 17, 4));
+cinderellas.push(new Cinderella ('julieta', 19, 6));
+cinderellas.push(new Cinderella ('olivia', 18, 7.5));
+cinderellas.push(new Cinderella ('jennifer', 21, 5.5));
+cinderellas.push(new Cinderella ('kate', 23, 8));
+
+
 let prince = new Prince('james', 20, 4);
 for (const cinderella of cinderellas) {
     if (cinderella.shoeSize === prince.shoeFound){
@@ -211,9 +214,13 @@ for (const cinderella of cinderellas) {
 let findCinderella = cinderellas.find(value => value.shoeSize === prince.shoeFound);
 console.log(findCinderella)
 
+//ANOTHER WAY TO ADD AN OBJECT TO ARRAY using new
+let cinderella1 = [
+    new Cinderella('jessica', 20, 5),
+    new Cinderella('merciella', 21, 6),
 
-
-
+];
+console.log(cinderella1)
 
 
 
