@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+    .div{
+      background-color: mediumpurple;
+      height: 100vh;
+    }
+
+
+
+  </style>
+
+</head>
+<body>
+
+<script>
+
+</script>
+
+
+<script>
+    // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки
+
+    // let lsState = JSON.parse(localStorage.getItem('sessions'));
+    // if(!lsState){
+    //     localStorage.setItem('sessions', JSON.stringify([]));
+    //     lsState = [];
+    // }
+
+    let now = new Date();
+    console.log(now);
+
+        let json = localStorage.getItem('sessions');
+        let array = JSON.parse(json);
+        array.push(now);
+        localStorage.setItem('sessions', JSON.stringify(array));
+
+
+    console.log(localStorage.getItem('sessions'));
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -26,11 +26,11 @@ function User (id, name) {
 
 let user2 = new User (1, 'olya');
 console.log(user2);
-user2.greeting();
+//user2.greeting();
 
 let user3 = new User (2, 'katya');
 console.log(user3);
-user3.greeting();
+//user3.greeting();
 
 
 

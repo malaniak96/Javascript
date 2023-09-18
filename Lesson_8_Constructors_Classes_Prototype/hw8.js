@@ -218,9 +218,8 @@ console.log(findCinderella)
 let cinderella1 = [
     new Cinderella('jessica', 20, 5),
     new Cinderella('merciella', 21, 6),
-
 ];
-console.log(cinderella1)
+console.log(cinderella1);
 
 
 

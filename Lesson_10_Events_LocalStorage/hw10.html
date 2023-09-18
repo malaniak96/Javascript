@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+  <style>
+    .block {
+      background-color: lawngreen;
+      width: 200px;
+      height: 200px;
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 55px;
+    }
+    .div {
+      background-color: red;
+      width: 200px;
+      height: 200px;
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 55px;
+    }
+
+  </style>
+</head>
+<body>
+<form action="" name="f1">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="surname" placeholder="surname">
+  <input type="number" name="age" placeholder="age">
+  <button>save</button>
+</form>
+
+<input type="text" value="" id="text" />
+<button onclick="post()">send</button>
+
+
+
+<div class ="block" onload="myFunction()"></div>
+
+
+<form action="" name="form">
+<input type="text" name="age" placeholder="age" />
+<button>send</button>
+</form>
+
+
+<form action="" name="table" >
+  <input type="number" name="rows" placeholder="rows">
+  <input type="number" name="columns" placeholder="columns">
+  <input type="text" name="text" placeholder="text">
+  <button>create</button>
+</form>
+
+<div class="div"></div>
+
+
+<script>
+  // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
+  // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+  let f1 = document.forms.f1;
+  f1.onsubmit = function (e){
+    e.preventDefault();
+    let user = {
+      name: this.name.value,
+      surname: this.surname.value,
+      age:this.age.value,
+    }
+    console.log(user);
+  };
+
+
+  //OR
+  // f1.addEventListener('submit', function (event) {
+  //   event.preventDefault();
+  //   let name = this.name.value;
+  //   let surname = this.surname.value;
+  //   let age = this.age.value;
+  //   let obj = {name, surname, age};
+  //   console.log(obj);
+  //   localStorage.setItem('userData', JSON.stringify(obj));
+  // });
+  // console.log(localStorage.getItem('userData'));
+</script>
+
+<script>
+  // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+  // ==========================
+
+  let count = document.getElementsByClassName('block')[0];
+  let p = document.createElement('p');
+  count.appendChild(p);
+
+
+  let number = localStorage.getItem('count');
+  if (number === null) {
+    number = 25;
+  } else {
+    number ++;
+  }
+  count.append(number);
+  localStorage.setItem('count', number);
+
+
+
+
+
+
+
+</script>
+
+<script>
+
+
+
+  // Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+  // =========================
+
+
+
+
+
+
+
+
+
+
+  //         зробити масив на 100 об'єктів та дві кнопки prev next
+  // при завантажені сторінки з'являються перші 10 об'єктів.
+  //         При натисканні next виводяться настпні 10 об'єктів
+  // При натисканні prev виводяться попередні 10 об'єктів
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //
+  // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+  //
+  function post(){
+    document.getElementById("text").value = "";
+
+  }
+
+  //створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+  let form = document.forms.form;
+  form.onsubmit = function (e){
+    e.preventDefault();
+    let age = this.age.value;
+    if (age < 18){
+      alert('Your age is less than 18')
+    } else{
+      console.log(age);
+    }
+  };
+
+
+  // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+  //         При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+  // (Додатковачастина для завдання)
+
+
+let table = document.forms.table;
+  table.onsubmit = function (e) {
+    e.preventDefault();
+
+    let myTable = document.createElement('table');
+    myTable.classList.add('tb');
+
+  let rows = table.rows.value;
+  let columns = table.columns.value;
+  let text = table.text.value;
+
+  for( let i = 0; i < rows; i++) {
+   let tr = document.createElement('tr');
+
+    for( let i = 0; i < columns; i++) {
+    let td = document.createElement('td');
+    td.innerText = text;
+
+    tr.append(td);
+    myTable.appendChild(tr);
+      console.log(rows);
+      console.log(columns);
+    }
+  }
+
+  table.appendChild(myTable);
+  document.body.appendChild(table);
+  myTable.setAttribute("border", "1");
+}
+
+
+
+
+
+  // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+  // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+  //         зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+  //         При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+
+  let divB = document.getElementsByClassName('div')[0];
+  let h1 = document.createElement('h1');
+  divB.appendChild(h1);
+
+  let num = localStorage.getItem('divB');
+  if (num === null ) {
+      num = 100;
+  } else {
+      num++;
+      num = num + 10;
+  }
+  divB.append(num);
+  localStorage.setItem('divB', num);
+  let now = new Date();
+  console.log(now);
+
+  let data = {num, now};
+
+  let time = localStorage.getItem('time');
+let count = JSON.parse(localStorage.getItem('counter') || 0);
+let currentTime = new Date().getTime();
+
+
+</script>
+
+</body>
+</html>

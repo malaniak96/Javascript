@@ -114,7 +114,7 @@
     //
     // ==========================
     for (const item of coursesAndDurationArray2) {
-        let div2 = document.createElement('div2');
+        let div2 = document.createElement('div');
         div2.classList.add('item');
 
         let h1 = document.createElement('h1');
@@ -175,7 +175,7 @@
     ];
 
     for (const simpson of simpsons) {
-        let div3 = document.createElement('div3');
+        let div3 = document.createElement('div');
         div3.classList.add('simpson');
 
         let h2 = document.createElement('h2');
@@ -272,11 +272,33 @@
             modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
         }
     ];
-    for (const course of coursesArray) {
+
+        let div1 = document.createElement('div');
+        document.body.append(div1);
 
 
-    }
+        for (const course2 of coursesArray) {
+            let divMain = document.createElement('div');
+            div1.append(divMain);
 
+            let h3 = document.createElement('h3');
+            h3.innerText = `${course2.title}`;
+
+            let duration = document.createElement('p');
+            duration.innerText = `Month Duration: ${course2.monthDuration}, Hour Duration: ${course2.hourDuration}`
+
+            let ulMain = document.createElement('ul');
+            for (const ulMainElement of course2.modules) {
+                let li1 = document.createElement('li');
+                li1.innerText = `${ulMainElement}`;
+
+                console.log(course2.modules);
+                console.log(course2);
+                ulMain.appendChild(li1);
+            }
+
+            divMain.append(h3, duration, ulMain);
+        }
 
 </script>
 
