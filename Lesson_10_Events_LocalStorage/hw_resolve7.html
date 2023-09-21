@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="count">100UAH</div>
+
+
+
+
+
+<script>
+    // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+    // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+    //         зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+    //         При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+    let count = +localStorage.getItem('count') || 100;
+
+    let currentTime = new Date().getTime();
+
+    let lastRefresh = localStorage.getItem('lastRefresh');
+
+    let countDiv = document.getElementById('count');
+
+
+    if (currentTime - lastRefresh > 10000){
+        count += 10;
+        localStorage.setItem('count', count.toString());
+    }
+
+    countDiv.innerText = `${count} uah`;
+    localStorage.setItem('lastRefresh', currentTime.toString());
+
+
+</script>
+</body>
+</html>

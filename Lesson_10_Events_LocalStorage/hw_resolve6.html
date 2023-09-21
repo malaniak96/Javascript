@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="" name="creator" class="form wrapper">
+  <input type="number" name="rows" placeholder="rows">
+  <input type="number" name="columns" placeholder="columns">
+  <input type="text" name="text" placeholder="text">
+  <button>create table</button>
+</form>
+
+<div id="result"></div>
+<script>
+
+  // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+  //         При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+  // (Додатковачастина для завдання)
+
+
+  let form = document.forms.creator;
+  let wrapper = document.getElementById('result');
+
+
+
+  form.onsubmit = function (e) {
+    e.preventDefault();
+
+    let table = document.createElement('table');
+    table.classList.add('tb');
+
+    let rowCount = +this.rows.value;
+    let columnCount = +this.columns.value;
+
+    for( let i = 0; i < rowCount; i++) {
+      let tr = document.createElement('tr');
+
+      for( let i = 0; i < columnCount; i++) {
+        let td = document.createElement('td');
+        td.innerText = this.text.value;
+
+        tr.appendChild(td);
+        table.appendChild(tr);
+        console.log(rowCount);
+        console.log(columnCount);
+      }
+    }
+
+    form.appendChild(table);
+    wrapper.appendChild(table);
+    table.setAttribute("border", "1");
+  }
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

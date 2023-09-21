@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+//  function doFetch(url) {
+//    return fetch(url)
+//            .then(value => value.json())
+//            .then(value => value. products)
+//  }
+//  doFetch(('https://dummyjson.com/products/search?q=phone'))
+//          .then(value => console.log(value));
+//
+//  doFetch(('https://dummyjson.com/products/search?q=laptop'))
+//          .then(value => console.log(value));
+//
+//
+
+//another way to do this
+
+async function doAsyncFetch(url) {
+  let response1 = await fetch(url).then(value => value.json());
+  let response2 = await fetch(url).then(value => value.json());
+  let response3 = await fetch(url).then(value => value.json());
+
+      return response1.products;//promise
+}
+doAsyncFetch('https://dummyjson.com/products/search?q=phone')
+        .then (value => console.log(value));
+
+
+</script>
+</body>
+</html>

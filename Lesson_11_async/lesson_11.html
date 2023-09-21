@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+//SYNC CODE
+// console.log('1');
+// console.log('2');
+// console.log('3');
+//синхроність 1 тоді 2 тоді 3
+
+
+//todo SET TIMEOUT
+//ASYNC CODE - setTimeout
+  console.log('1');
+
+setTimeout(() => {
+  console.log('async 1');
+  }, 1000);
+
+  console.log('2');
+
+setTimeout(() => {
+  console.log('async 2');
+}, 1000);
+
+setTimeout(() => {
+  console.log('async 3');
+}, 500);
+
+console.log('3');
+
+//even though if set time is 0, it will be last in console log as it goes to queue
+// setTimeout(() => {
+// console.log('async');
+// }, 0);
+
+
+//async code has scope
+//sync code will start and then goes async to web api
+// and when it goes to console log x has been already delivered
+//sync ignores async
+let x = 0;
+
+setTimeout(() => {
+    x = 100500;
+}, 1000);
+
+console.log(x);
+
+//sync goes to whole stack and async goes to web api
+
+//todo API -application programming interface
+//dummy json website = arrays of products
+//json objects
+//API is a software mediator that allows two or more applications to talk to each other. JavaScript provides a few
+// built-in methods and external open source libraries to create and interact with the API.
+
+// fetch('https://dummyjson.com/products')
+//     .then (res => res.json())
+//     .then(products => console.log(products))
+
+fetch('https://dummyjson.com/products')
+    .then (res => res.json())
+    .then((productsResponse) => {
+        console.log(productsResponse);
+        let {products} = productsResponse;
+        console.log(products);
+
+        for (const product of products) {
+            let div = document.createElement('div');
+            let title = document.createElement('h2');
+            title.innerText = product.title;
+            let description = document.createElement('p');
+            description.innerText = product.description;
+            div.appendChild(description);
+
+            let img = document.createElement('img');
+            img.src =
+
+            document.body.appendChild(div);
+        }
+    })
+
+
+
+
+</script>
+</body>
+</html>

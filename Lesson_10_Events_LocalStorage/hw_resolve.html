@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<h1>Count: <b class="block"> </b></h1>
+
+
+
+
+  <script>
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+    // ==========================
+
+    let count = localStorage.getItem('count') || 0;
+    let block = document.getElementsByClassName('block');
+    let newCount = (+count + 1).toString();
+
+    block.innerText = newCount;
+    localStorage.setItem('count', newCount);
+
+</script>
+
+
+<script>
+  // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки
+  // Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+  // =========================
+  let json = localStorage.getItem('sessions');
+  let sessions = json ? JSON.parse(json) : [];
+
+  sessions.push({
+       date: new Date(),
+  });
+  localStorage.getItem('sessions', JSON.stringify(sessions));
+
+</script>
+
+<script>
+  let json = localStorage.getItem('sessions');
+  let sessions = json ? JSON.parse(json) : [];
+  for (const session of sessions) {
+    let wrapper = document.createElement('div');
+    wrapper.innerText = session.date;
+    document.body.appendChild(wrapper);
+  }
+
+
+
+</script>
+
+</body>
+</html>

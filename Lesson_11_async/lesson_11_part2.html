@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //обгортка
+  let promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+          console.log('4');
+          resolve();
+      }, 1000);
+
+  });
+
+ let promise2 = promise.then(value => {
+     return new Promise((resolve, reject) => {
+         setTimeout(() => {
+             console.log('5');
+             resolve();
+         }, 1500);
+     })
+ });
+
+  promise.then(value => {
+      setTimeout(() => {
+          console.log('6');
+      }, 2000);
+  });
+</script>
+
+
+
+<script>
+
+    //resolve and reject - довільні назви
+    //resolve - якщо все ок
+    //reject - відштовзує передає інфу у блок catch
+    let promise3 = new Promise((resolve, reject) => {
+        let x = 1;
+        setTimeout(() => {
+            console.log('1');
+            resolve(x);
+        }, 1000);
+
+    })
+
+        .then(x => {
+           return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    x++;
+                    console.log(x);
+                    if (false) {
+                        resolve(x);
+                    } else {
+                        reject ('adsadasds');
+                    }
+                }, 1500);
+            })
+
+    })
+
+    .then(value => {
+        return new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                value++;
+                console.log(value);
+            }, 2000);
+        })
+
+    })
+        .catch(reason => console.log(reason));
+
+//reject розриває процес
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
