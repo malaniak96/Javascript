@@ -40,8 +40,9 @@
                }
 
               if (typeof user[key] === 'object') {
+                  let ul2 = document.createElement('ul');
+
                     for (const key2 in user[key]){
-                        let ul2 = document.createElement('ul');
                         let li2 = document.createElement('li');
                         li2.innerText = `${key2}: ${user[key][key2]}`;
 
@@ -56,8 +57,9 @@
                         }
 
                         if (typeof user[key][key2] === 'object'){
+                            let ul3 = document.createElement('ul');
+
                             for (const key3 in user[key][key2]){
-                                let ul3 = document.createElement('ul');
                                 let li3 = document.createElement('li');
                                 li3.innerText = `${key3}: ${user[key][key2][key3]}`;
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+
+<h2><a href="persons_details_consultation.html" class="home">GO TO HOME PAGE</a></h2>
+<div id="wrapperUser"></div>
+
+
+
+
+<script>
+    const id = new URL(location.href).searchParams.get('personId');
+
+    fetch('https://rickandmortyapi.com/api/character/' + id)
+        .then(res => res.json())
+        .then(person => {
+            console.log(person);
+            const wrapper = document.getElementById('wrapperUser');
+            const ul = document.createElement('ul');
+            userBilder(person, ul);
+            wrapper.appendChild(ul)
+        })
+
+    function userBilder(userObject, tag) {
+        for (const key in userObject) {
+            if (typeof userObject[key] !== 'object') {
+                const li = document.createElement('li');
+                li.innerText = `${key} - ${userObject[key]}`;
+                tag.appendChild(li);
+            } else {
+                const ul = document.createElement('ul');
+                const li = document.createElement('li');
+                ul.innerHTML = `<b>${key}:</b>`;
+                tag.appendChild(ul);
+                userBilder(userObject[key], ul)
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

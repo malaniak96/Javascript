@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>List of Users:</h1>
+<ul id="list"></ul>
+
+
+
+<script>
+    fetch('http://jsonplaceholder.typicode.com/users')
+        .then((value) => value.json())
+        .then((users) => {
+
+            let ul = document.getElementById('list');
+
+            for (const user of users) {
+                let li = document.createElement('li');
+                li.innerText = `${user.id} - ${user.name}`;
+                li.style.marginBottom = '15px';
+                ul.appendChild(li);
+
+                let button = document.createElement('button');
+                button.innerText = 'user info';
+                button.style.marginLeft = '15px';
+                li.appendChild(button);
+
+                button.onclick = () => {
+                    location.href = `./users_details_recursion2.html?userId=${user.id}`;
+                }
+            }
+        })
+
+
+
+</script>
+</body>
+</html>

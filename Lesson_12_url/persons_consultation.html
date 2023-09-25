@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+<script>
+  const urlPlaceholder = 'http://jsonplaceholder.typicode.com/users/';
+
+  const url = 'https://rickandmortyapi.com/api/character';
+
+
+  let id = new URL(location.href).searchParams.get('id')
+
+
+  fetch(urlPlaceholder + '/' + id)
+
+          .then(res => res.json())
+
+          .then((person) => {
+
+            let wrapper = document.getElementById('wrapperUser');
+
+            let ul = document.createElement('ul');
+
+            userBilder(person, ul);
+
+            wrapper.appendChild(ul)
+
+          })
+
+  function userBilder(userObject, tag){
+
+    for (const key in userObject) {
+
+      if(typeof userObject[key] !== 'object' ){
+
+        let li = document.createElement('li');
+
+        li.innerText = `${key} - ${userObject[key]}`
+
+        tag.appendChild(li)
+
+      }else {
+
+        let ul = document.createElement('ul');
+
+        // let li = document.createElement('li');
+
+        ul.innerHTML = `<b>${key}</b>`;
+
+        tag.appendChild(ul);
+
+        userBilder(userObject[key], ul)
+
+      }
+
+    }
+
+  }
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
