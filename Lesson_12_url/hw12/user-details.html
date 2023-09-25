@@ -31,6 +31,13 @@
                console.log(key);
                console.log(li);
 
+               if (key ==='address') {
+                   li.innerText = `${key}:`;
+               } else if (key === 'company') {
+                   li.innerText = `${key}:`;
+               } else {
+               li.innerText = `${key}: ${user[key]}`;
+               }
 
               if (typeof user[key] === 'object') {
                     for (const key2 in user[key]){
@@ -42,27 +49,30 @@
                         ul2.append(li2);
                         li.append(ul2);
 
+                        if (key2 === 'geo') {
+                            li2.innerText = `${key2}:`;
+                        } else {
+                            li2.innerText = `${key2}: ${user[key][key2]}`;
+                        }
 
-                        if (typeof user[key2] === 'object'){
-                            for (const key3 in user[key2]){
+                        if (typeof user[key][key2] === 'object'){
+                            for (const key3 in user[key][key2]){
                                 let ul3 = document.createElement('ul');
                                 let li3 = document.createElement('li');
-                                li3.innerText = `${key3}: ${user[key2][key3]}`;
+                                li3.innerText = `${key3}: ${user[key][key2][key3]}`;
 
 
                                 ul3.append(li3);
-                                li.append(ul3);
+                                li2.append(ul3);
                             }
                         }
                     }}
+
           document.body.append(div);
-       }})
+       }});
 
 
-//                li.innerText = ${key}: ${user[key].street}, ${user[key].suite}, ${user[key].city}, ${user[key].zipcode};
-      // } else {
-       //    li.innerText = ${key}: ${user[key]};
-      // }
+
 
 
 
