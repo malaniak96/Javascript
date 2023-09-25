@@ -34,7 +34,7 @@
                     for (const obj2 in user[obj]){
                         let ul2 = document.createElement('ul');
                         let li2 = document.createElement('li');
-                        li2.innerText = `${obj2}: ${obj[obj2]}`;
+                        li2.innerText = `${obj2}: ${user[obj][obj2]}`;
                         ul2.append(li2);
                         li.append(ul2);
                     }
