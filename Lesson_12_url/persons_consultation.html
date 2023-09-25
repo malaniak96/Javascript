@@ -16,61 +16,40 @@
 
 <script>
   const urlPlaceholder = 'http://jsonplaceholder.typicode.com/users/';
-
   const url = 'https://rickandmortyapi.com/api/character';
 
+  fetch(url)
+      .then(res => res.json())
+      .then(({results}) => {
+          console.log(results);
 
-  let id = new URL(location.href).searchParams.get('id')
+          let fatherDiv = document.createElement('div');
+          fatherDiv.classList.add('father');
+          document.body.appendChild(fatherDiv);
 
+          results.forEach(person => {
+              let personDiv = document.createElement('div');
+              personDiv.classList.add('person');
+              let a = document.createElement('a');
+              a.innerHTML = `${person.name} `;
+              a.href = `persons_details_consultation.html?id=${person.id}`;
 
-  fetch(urlPlaceholder + '/' + id)
+              ////// варіант з кнопкою
+              // let btn = document.createElement('button');
+              // btn.innerText = 'TO PERSON';
+              // btn.onclick = ()=>{
+              //     location.href = `person.html?personId=${person.id}`
+              // }
+              let img = document.createElement('img');
+              img.src = `${person.image}`;
 
-          .then(res => res.json())
-
-          .then((person) => {
-
-            let wrapper = document.getElementById('wrapperUser');
-
-            let ul = document.createElement('ul');
-
-            userBilder(person, ul);
-
-            wrapper.appendChild(ul)
-
+              personDiv.append(a, img);
+              fatherDiv.appendChild(personDiv);
           })
-
-  function userBilder(userObject, tag){
-
-    for (const key in userObject) {
-
-      if(typeof userObject[key] !== 'object' ){
-
-        let li = document.createElement('li');
-
-        li.innerText = `${key} - ${userObject[key]}`
-
-        tag.appendChild(li)
-
-      }else {
-
-        let ul = document.createElement('ul');
-
-        // let li = document.createElement('li');
-
-        ul.innerHTML = `<b>${key}</b>`;
-
-        tag.appendChild(ul);
-
-        userBilder(userObject[key], ul)
-
-      }
-
-    }
-
-  }
-
-
-
+      })
+</script>
+</body>
+</html>
 
 
 

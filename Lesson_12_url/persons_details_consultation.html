@@ -9,26 +9,32 @@
 </head>
 <body>
 
-<h2><a href="persons_details_consultation.html" class="home">GO TO HOME PAGE</a></h2>
+<h2><a href="persons_consultation.html" class="home">GO TO HOME PAGE</a></h2>
 <div id="wrapperUser"></div>
 
 
 
 
 <script>
-    const id = new URL(location.href).searchParams.get('personId');
+    const urlPlaceholder = 'http://jsonplaceholder.typicode.com/users/';
+    const url = 'https://rickandmortyapi.com/api/character';
+//'/' is added because it is missing in the end or url /character/
+//or fetch('https://rickandmortyapi.com/api/character/${id}')
 
-    fetch('https://rickandmortyapi.com/api/character/' + id)
+    const id = new URL(location.href).searchParams.get('id');
+//url or urlplaceholder can be added for different information
+    fetch(url + '/' + id)
         .then(res => res.json())
-        .then(person => {
+        .then((person)=> {
             console.log(person);
+
             const wrapper = document.getElementById('wrapperUser');
             const ul = document.createElement('ul');
-            userBilder(person, ul);
-            wrapper.appendChild(ul)
+            userBuilder(person, ul);
+            wrapper.appendChild(ul);
         })
 
-    function userBilder(userObject, tag) {
+    function userBuilder(userObject, tag) {
         for (const key in userObject) {
             if (typeof userObject[key] !== 'object') {
                 const li = document.createElement('li');
@@ -36,10 +42,10 @@
                 tag.appendChild(li);
             } else {
                 const ul = document.createElement('ul');
-                const li = document.createElement('li');
+               // const li = document.createElement('li');
                 ul.innerHTML = `<b>${key}:</b>`;
                 tag.appendChild(ul);
-                userBilder(userObject[key], ul)
+                userBuilder(userObject[key], ul);
             }
         }
     }
