@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>User Info:</h1>
+<ul id="list"></ul>
+
+
+<script>
+  let url = new URL(location.href);
+  let userId = url.searchParams.get('userId');
+
+  fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
+          .then((value) => value.json())
+          .then((user) => {
+            let ul = document.getElementById('list');
+            let div = document.createElement('div');
+            userBuilder(user, ul);
+            div.appendChild(ul);
+
+          })
+  function userBuilder(userObj, tag){
+    for (const key in userObj) {
+      if (typeof userObj[key] === 'object'){
+        let li = document.createElement('li');
+
+        li.innerText = `${key} - ${userObj[key]}`
+
+        tag.appendChild(li);
+
+      } else {
+        let ul = document.createElement('ul');
+
+        ul.innerHTML = `<b>${key}:</b>`;
+
+        tag.appendChild(ul);
+
+        userBuilder(userObj[key], ul);
+      }
+    }
+  }
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

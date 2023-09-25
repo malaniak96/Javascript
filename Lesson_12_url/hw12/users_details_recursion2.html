@@ -16,7 +16,7 @@
 
   fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
           .then((value) => value.json())
-          .then((user) => {
+          .then(({user}) => {
             let ul = document.getElementById('list');
             let div = document.createElement('div');
             userBuilder(user, ul);
@@ -35,7 +35,7 @@
         } else {
           let ul = document.createElement('ul');
 
-          ul.innerHTML = `<b>${key}</b>`;
+          ul.innerHTML = `<b>${key}:</b>`;
 
           tag.appendChild(ul);
 
