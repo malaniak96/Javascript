@@ -24,31 +24,45 @@
             let div = document.createElement('div');
             div.appendChild(ul);
 
-           for (const obj in user) {
+           for (const key in user) {
                let li = document.createElement('li');
-               li.innerText = `${obj}: ${user[obj]}`;
+               li.innerText = `${key}: ${user[key]}`;
                ul.append(li);
-               console.log(obj);
+               console.log(key);
+               console.log(li);
 
-              if (typeof user[obj] === 'object') {
-                    for (const obj2 in user[obj]){
+
+              if (typeof user[key] === 'object') {
+                    for (const key2 in user[key]){
                         let ul2 = document.createElement('ul');
                         let li2 = document.createElement('li');
-                        li2.innerText = `${obj2}: ${user[obj][obj2]}`;
+                        li2.innerText = `${key2}: ${user[key][key2]}`;
+
+
                         ul2.append(li2);
                         li.append(ul2);
-                    }
-              }
 
 
-           }
+                        if (typeof user[key2] === 'object'){
+                            for (const key3 in user[key2]){
+                                let ul3 = document.createElement('ul');
+                                let li3 = document.createElement('li');
+                                li3.innerText = `${key3}: ${user[key2][key3]}`;
 
+
+                                ul3.append(li3);
+                                li.append(ul3);
+                            }
+                        }
+                    }}
           document.body.append(div);
-       });
+       }})
 
 
-
-
+//                li.innerText = ${key}: ${user[key].street}, ${user[key].suite}, ${user[key].city}, ${user[key].zipcode};
+      // } else {
+       //    li.innerText = ${key}: ${user[key]};
+      // }
 
 
 
