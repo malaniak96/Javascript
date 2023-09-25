@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  let body = JSON.stringify({
+    title: 'BMW Pencil',
+    //* other product data */
+  });
+
+  fetch('https://dummyjson.com/products/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: body,
+  })
+          .then(res => res.json())
+          .then(value => console.log(value));
+
+
+  //.then will receive an answer from server
+  //method - post, delete and etc
+
+
+  fetch('https://dummyjson.com/products/1', {
+    method: 'DELETE',
+  })
+          .then(res => res.json())
+          .then(value => console.log(value));
+
+
+</script>
+
+
+
+
+</body>
+</html>

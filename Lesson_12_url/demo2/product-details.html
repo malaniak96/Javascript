@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+  let url = new URL(location.href);
+  console.log(url);
+
+  let productJSON = url.searchParams.get('value');
+  let product = JSON.stringify(productJSON);
+  console.log(product);
+
+  //parse() JSON parsing is the process of converting a JSON object in text format
+  // to a Javascript object that can be used inside a program.
+  // In Javascript, the standard way to do this is by using the method JSON. parse() ,
+  // as the Javascript standard specifies.
+
+  // url is string - pack anything inside - ex. data for object -product
+</script>
+
+
+
+</body>
+</html>

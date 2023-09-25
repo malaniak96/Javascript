@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>User Details:</h1>
+<ul id="list"></ul>
+<h1><span class="line">Info</span></h1>
+<div class="wrap"></div>
+
+<script>
+
+       let url = new URL(location.href);
+       let userId = url.searchParams.get('userId');
+
+   fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
+       .then((value) => value.json())
+       .then((user) => {
+            let ul = document.getElementById('list');
+            let div = document.createElement('div');
+            div.appendChild(ul);
+
+           for (const obj in user) {
+               let li = document.createElement('li');
+               li.innerText = `${obj}: ${user[obj]}`;
+               ul.append(li);
+               console.log(obj);
+
+              if (typeof user[obj] === 'object') {
+                    for (const obj2 in obj){
+                        let ul2 = document.createElement('ul');
+                        let li2 = document.createElement('li');
+                        li2.innerText = `${obj2}: ${obj[obj2]}`;
+                        ul2.append(li2);
+                    }
+              }
+
+
+           }
+
+          document.body.append(div);
+       });
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
