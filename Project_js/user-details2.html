@@ -28,6 +28,14 @@
 
             let ul = document.getElementById('list');
             userBuilder(user, ul);
+
+            let btn = document.createElement('button');
+            btn.innerText =`Posts of current user`;
+
+            btn.onclick = () => {
+
+            }
+            ul.appendChild(btn);
         });
 
     function userBuilder(objUser, parent) {
