@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+//regex - regular expression - to find something letter number word
+// /[a-z]\w{1,}
+//to find email [a-zA-Z0-9]{2,}@\w{1,}\.\w{}
+
+//regex phone number ukraine
+
+
+
+
+//замикання
+//тобто замикання це можливість витягнути
+// значення локальної змінної у скоуп з якого до неї не доступитись
+//штучна приватність
+function foobar(){
+    let user = 100500;
+
+    function inner(){
+        console.log(x);
+    }
+    return inner;
+}
+console.log(foobar());
+
+function userBuilder(id, name){
+    let user = {id, name};
+
+    return {
+        setId:  function (newId){
+            if(newId < 0){
+                console.log('asfffafsdf');
+            }else {
+                user.id = newId;
+            }
+        },
+        getObj: function (){
+            return JSON.parse(JSON.stringify(user));
+        },// найбільша частина замикання
+        setName: function (name){
+            if(user.name !== name){
+                user.name= name;
+            }else {
+                console.log('insert your name here');
+            }
+        }
+    };
+}
+let xxx = userBuilder(1, 'vasya');
+console.log(xxx);
+xxx.setId(600);
+console.log(xxx.getObj());
+xxx.setName('vasya2');
+
+
+//recursion - функція яка може викликати сама себе
+// функція ніколи не закривається
+// function rec(){
+//     console.log('hello');
+//     rec();
+//
+// }
+// rec();
+
+
+
+
+//рекрусивна ітерація
+//todo INTERVIEW QUESTION
+//як перебрати масив не використовуючи цикл - recursion //
+function recIteration (arr, i){
+    console.log(arr[i]);
+    i++;
+    if(i < arr.length){
+       recIteration (arr,i);
+    }
+}
+recIteration([11, 22, 33], 0);
+
+let arr = [11,22,33, [44,55],['asd','adasd',[true, false]], [66,77, [111,222]]]; //[11,22,33,44,55,66,77,111,222]
+console.log(arr.flat(3));
+
+let resultArr = [];
+
+function arrayFlatter(array){ //[44,55] [66,77,[111,222]]
+    for (const item of array){
+        if (Array.isArray(item)){
+            arrayFlatter(item); //recursion [44,55]
+        } else{
+            resultArr.push(item);
+        }
+    }
+}
+arrayFlatter(arr);
+console.log(resultArr);
+
+
+//call back
+
+function calc (a, b, callback){
+    return callback(a, b);
+}
+console.log(calc(10, 20, function (a, b){
+    return a + b;
+}));
+
+
+function filter (arr, callback){
+    let result = [];
+    for (const item of arr) {
+        if (callback(item)){
+            result.push(item);
+        }
+    }
+    return result;
+}
+console.log(filter([11,22,33,44,55], function (item){
+    return item % 2 === 0;
+}));
+
+let users = [
+    {name: 'vasya', age:15, status: false},
+    {name: 'olya', age:5, status: true},
+    {name: 'katya', age:10, status: false},
+];
+
+//В мене же питали щоб я написав кастомно метод indexOf
+//На співбесіди питали як видалиТи дублікати з масиву.
+// Я навів приклад як заюзати можна Set.
+
+let set = new Set();
+set.add('foo');
+set.add('bar');
+
+console.log(set);
+
+
+
+
+//звязок між ключами
+let map = new Map();
+let f1 = {name:'roma'};
+let f2 = {name:'sasha'};
+let f3 = {name:'anton'};
+
+map.set('professor', f1);
+map.set('borya', f2);
+map.set('baklan', {asd: 'asd'});
+map.set('baklan', f3);
+console.log(map);// асоціацію виводить
+console.log(map.get('baklan'));
+//balkan є асоціація
+
+console.log(map.keys());
+console.log(map.values());
+
+let iterableIterator = map.keys();
+console.log(iterableIterator.next());//professor
+console.log(iterableIterator.next());//borya
+console.log(iterableIterator.next());//baklan
+
+
+
+//
+//Сергій хотів в кінці аж запитати щоб не флудити, я в чаті вже питав колись.
+// В мене був один йо*нутий співбесід мене запитали front end це про програмування чи написання коду?
+// Щоб ти відповів бо я був в ступорі і зрозумів що та компанія якась какаха.
+//front end це написання коду а написання коду це програмування
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

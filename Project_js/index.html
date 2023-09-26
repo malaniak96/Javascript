@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<h1>Users:</h1>
+
+
+<body>
+<script>
+    // В index.html
+    // 1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
+    // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+    // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід на сторінку user_details.html,
+    // котра має детальну інфорацію про об'єкт на який клікнули
+
+    let placeholder = 'https://jsonplaceholder.typicode.com/users';
+
+    fetch(placeholder)
+        .then((value) => value.json())
+        .then((users) => {
+            console.log(users);
+
+            let divMain = document.createElement('div');
+            divMain.classList.add('main');
+            document.body.appendChild(divMain);
+
+            for (const user of users) {
+                let divUser = document.createElement('div');
+                divUser.classList.add('divUser');
+                divUser.innerText = `${user.id}: ${user.name}`;
+
+                let button = document.createElement('button');
+                button.classList.add('button');
+                button.innerText = `See More Details`;
+
+                button.onclick = () => {
+                    location.href = `user-details2.html?id=${user.id}`;
+                }
+
+                divUser.appendChild(button);
+                divMain.appendChild(divUser);
+            }
+        });
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

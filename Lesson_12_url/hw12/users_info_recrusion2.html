@@ -17,18 +17,18 @@
   let url = new URL(location.href);
   let userId = url.searchParams.get('userId');
 
-  fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
+  fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
           .then((value) => value.json())
           .then((user) => {
             let ul = document.getElementById('list');
             let div = document.createElement('div');
             userBuilder(user, ul);
-            div.appendChild(ul);
+            ul.appendChild(div);
 
           })
   function userBuilder(userObj, tag){
     for (const key in userObj) {
-      if (typeof userObj[key] === 'object'){
+      if (typeof userObj[key] !== 'object'){
         let li = document.createElement('li');
 
         li.innerText = `${key} - ${userObj[key]}`

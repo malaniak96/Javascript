@@ -16,14 +16,14 @@
 
 
 <script>
-    const urlPlaceholder = 'http://jsonplaceholder.typicode.com/users/';
+    const urlPlaceholder = 'https://jsonplaceholder.typicode.com/users/';
     const url = 'https://rickandmortyapi.com/api/character';
 //'/' is added because it is missing in the end or url /character/
 //or fetch('https://rickandmortyapi.com/api/character/${id}')
 
     const id = new URL(location.href).searchParams.get('id');
 //url or urlplaceholder can be added for different information
-    fetch(url + '/' + id)
+    fetch(urlPlaceholder + '/' + id)
         .then(res => res.json())
         .then((person)=> {
             console.log(person);
