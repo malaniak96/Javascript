@@ -20,9 +20,9 @@
     // 6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
 
 
-    const id = new URL(location.href).searchParams.get('id');
+    const userId = new URL(location.href).searchParams.get('userId');
 
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
         .then((value) => value.json())
         .then((user) => {
 
@@ -30,13 +30,37 @@
             userBuilder(user, ul);
 
             let btn = document.createElement('button');
-            btn.innerText =`Posts of current user`;
+            btn.innerText = `Posts of current user`;
+            ul.appendChild(btn);
 
             btn.onclick = () => {
+                fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+                    .then((value) => value.json())
+                    .then((posts) => {
+                        console.log(posts);
+                        let ulPost = document.createElement('ul');
+                        ulPost.classList.add('ulPost');
+                        document.body.appendChild(ulPost);
 
+                        for (const post of posts) {
+                            let liPost = document.createElement('li');
+                            liPost.classList.add('liPost');
+                            liPost.innerText = `Post Title: ${post.title}`;
+
+                            let buttonPost = document.createElement('button');
+                            buttonPost.classList.add('button');
+                            buttonPost.innerText = `See Post`;
+
+                            buttonPost.onclick = () => {
+                                location.href = `post-details.html?postId=${post.id}`;
+                            }
+                            liPost.appendChild(buttonPost);
+                            ulPost.appendChild(liPost);
+                        }
+                    });
             }
-            ul.appendChild(btn);
         });
+
 
     function userBuilder(objUser, parent) {
         for (const key in objUser) {
@@ -54,7 +78,6 @@
             }
         }
     }
-
 
 
 </script>
