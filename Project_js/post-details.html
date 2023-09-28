@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<h1><a href="user-details2.html" class="home">GO BACK TO USER </a></h1>
+<h1><a href="index.html" class="home">GO BACK TO USERS </a></h1>
 <h2>Post Details:</h2>
 <div id="div"></div>
 <h3>Post Comments:</h3>
@@ -37,21 +37,17 @@
                 .then((comments) => {
                     console.log(comments);
 
-                    let ulComments = document.createElement('ul');
-                    ulComments.classList.add('ulComments');
-                    document.body.appendChild(ulComments);
+                    let divComments = document.createElement('div');
+                    divComments.classList.add('divComments');
+                    document.body.appendChild(divComments);
 
                     for (const comment of comments) {
-                        let liComments = document.createElement('li');
-                        liComments.classList.add('liComments');
-                        liComments.innerText = `${comment.body}`
+                        let block = document.createElement('div');
+                        block.innerText = 'Comment:';
 
-
-                        ulComments.appendChild(liComments);
+                        divComments.appendChild(block);
+                        commentBuilder(comment, divComments);
                     }
-
-
-
 
                 })
         })
@@ -59,13 +55,23 @@
     function postBuilder(postObj, tag) {
 
         for (const key in postObj) {
-                let li = document.createElement('li');
-                li.innerText = `${key}: ${postObj[key]}`;
-                tag.appendChild(li);
+            let li = document.createElement('li');
+            li.innerText = `${key}: ${postObj[key]}`;
+            tag.appendChild(li);
         }
     }
 
+    function commentBuilder(commentObj, parent) {
 
+        let ul = document.createElement('ul');
+
+        for (const key in commentObj) {
+            let li = document.createElement('li');
+            li.innerText = `${key}: ${commentObj[key]}`;
+            ul.appendChild(li);
+            parent.appendChild(ul);
+        }
+    }
 
 
 </script>

@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <link href="">
 </head>
 
 <h1>Users:</h1>
@@ -33,7 +35,7 @@
             for (const user of users) {
                 let divUser = document.createElement('div');
                 divUser.classList.add('divUser');
-                divUser.innerText = `${user.id}: ${user.name}`;
+                divUser.innerText = `User ${user.id}: ${user.name}`;
 
                 let button = document.createElement('button');
                 button.classList.add('button');
