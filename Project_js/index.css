@@ -1,0 +1,76 @@
+.divMain{
+    width: 50vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: auto;
+    border: red solid 3px;
+}
+.divUser{
+    width: 20vw;
+    height: 17vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: black;
+    border: red dashed 1px;
+    background-color: white;
+    margin: auto;
+}
+.h1{
+    width: 45vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+h1{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: red;
+}
+
+h2{
+    font-size: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-weight: normal;
+    color: #fa0109;
+}
+
+.button {
+    margin-top: 3px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    background: linear-gradient(98.88deg, #fa0109 -2.99%, #000000 102.28%),
+    linear-gradient(0deg, #000000, #000000);
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    text-transform:uppercase;
+    font-size: 13px;
+    text-align: center;
+
+}
+
+
+.button:hover {
+    font-weight: bold;
+    background: white;
+    position: relative;
+    bottom: 3px;
+    right: 3px;
+    cursor: pointer;
+    background: linear-gradient(98.88deg, #0e0d0d -2.99%, #000000 102.28%),
+    linear-gradient(0deg, #000000, #faf7f7);
+}

@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+}
+.button {
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    background: linear-gradient(98.88deg, #fa0109 -2.99%, #000000 102.28%),
+    linear-gradient(0deg, #000000, #000000);
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    text-transform:uppercase;
+    font-size: 13px;
+    text-align: center;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px 20px 20px;
+}
+
+
+.button:hover {
+    font-weight: bold;
+    background: white;
+    position: relative;
+    bottom: 3px;
+    right: 3px;
+    cursor: pointer;
+    background: linear-gradient(98.88deg, #0e0d0d -2.99%, #000000 102.28%),
+    linear-gradient(0deg, #000000, #faf7f7);
+}
+
+.buttonPost {
+    margin-top: 7px;
+    padding: 10px 12px 10px 12px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    background: linear-gradient(98.88deg, #d92e2e -2.99%, #efebeb 102.28%),
+    linear-gradient(0deg, #000000, #000000);
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    text-transform:uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+}
+
+a{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+#list {
+    width: 50vw;
+    height: 55vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    margin: auto;
+    border: red solid 2px;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: black;
+    font-size: 13px;
+}
+
+.divMain{
+    height: 63vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+    margin: 5px;
+}
+
+h1{
+    color: #fa0109;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.ulPost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 45vh;
+    padding-left: 0;
+}
+
+.liPost{
+    width: 16vw;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: red dashed 2px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+
+}

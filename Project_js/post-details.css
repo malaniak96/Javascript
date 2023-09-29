@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+#div {
+    width: 50vw;
+    height: 30vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    margin: auto;
+    border: red solid 2px;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lobster', cursive;
+    text-align: left;
+    color: black;
+    font-size: 17px;
+}
+
+a {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 5px;
+    text-align: center;
+}
+
+h3 {
+    color: #fa0109;
+    font-size: 25px;
+    margin: 5px;
+    text-align: center;
+}
+
+.divComments{
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: green;
+}
+
+
+.ulComments{
+    height: 28vh;
+    width: 22vw;
+    background-color: white;
+    border: red dashed 2px;
+    text-align: left;
+    padding-top: 12px;
+
+}
