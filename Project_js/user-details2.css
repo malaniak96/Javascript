@@ -8,7 +8,7 @@ body {
     background: linear-gradient(98.88deg, #fa0109 -2.99%, #000000 102.28%),
     linear-gradient(0deg, #000000, #000000);
     color: #FFFFFF;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lobster', cursive;
     text-transform:uppercase;
     font-size: 13px;
     text-align: center;
@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 20px 20px 20px;
+    margin-top: -100px;
 }
 
 
@@ -32,6 +32,7 @@ body {
 }
 
 .buttonPost {
+    font-family: 'Lobster', cursive;
     margin-top: 7px;
     padding: 10px 12px 10px 12px;
     border-radius: 20px;
@@ -39,7 +40,6 @@ body {
     background: linear-gradient(98.88deg, #d92e2e -2.99%, #efebeb 102.28%),
     linear-gradient(0deg, #000000, #000000);
     color: black;
-    font-family: 'Roboto', sans-serif;
     text-transform:uppercase;
     font-weight: bold;
     font-size: 13px;
@@ -48,11 +48,8 @@ body {
 }
 
 a{
-    font-family: 'Inter', sans-serif;
     font-family: 'Lobster', cursive;
-    text-align: center;
     color: black;
-    font-size: 15px;
     text-decoration: none;
 }
 #list {
@@ -62,36 +59,37 @@ a{
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    background-color: white;
-    margin: auto;
     border: red solid 2px;
-    font-family: 'Inter', sans-serif;
     font-family: 'Lobster', cursive;
     text-align: center;
-    color: black;
     font-size: 13px;
+    padding-top: 20px;
+    margin: auto;
+    background-color: rgba(14, 13, 13, 0.63);
+    color: #c7c7c7;
 }
 
 .divMain{
-    height: 63vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
+    background-image: url("istockphoto-152119339-170667a.webp");
+    height: 94vh;
+
 }
 
 h2{
     text-align: center;
-    margin: 5px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    background-image: url("istockphoto-152119339-170667a.webp");
 }
 
-h1{
-    color: #fa0109;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
 
 .ulPost{
     display: flex;
@@ -99,13 +97,15 @@ h1{
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 45vh;
+    height: 60vh;
     padding-left: 0;
+    margin-top: -80px;
+    background-image: url("istockphoto-152119339-170667a.webp");
 }
 
 .liPost{
     width: 16vw;
-    height: 18vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,5 +115,8 @@ h1{
     text-align: center;
     padding: 5px;
     margin: 10px;
-
+    font-family: 'Lobster', cursive;
+    background-color: rgba(14, 13, 13, 0.63);
+    color: #c7c7c7;
 }
+

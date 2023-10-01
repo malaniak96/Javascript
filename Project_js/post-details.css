@@ -12,52 +12,72 @@ body {
     background-color: white;
     margin: auto;
     border: red solid 2px;
-    font-family: 'Inter', sans-serif;
     font-family: 'Lobster', cursive;
     text-align: left;
-    color: black;
     font-size: 17px;
+    color: #c7c7c7;
+    background-color: rgba(14, 13, 13, 0.63);
 }
 
 a {
-    font-family: 'Inter', sans-serif;
     font-family: 'Lobster', cursive;
     text-align: center;
     color: black;
-    font-size: 15px;
     text-decoration: none;
 }
 
 h1 {
-    font-size: 20px;
-    margin: 5px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0;
     text-align: center;
+    font-family: 'Lobster', cursive;
+    background-image: url("istockphoto-152119339-170667a.webp");
+    width: 50vw;
 }
 
 h3 {
-    color: #fa0109;
-    font-size: 25px;
-    margin: 5px;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
+    background: linear-gradient(98.88deg, #fa0109 -2.99%, #000000 102.28%),
+    linear-gradient(0deg, #000000, #000000);
+    padding: 7px;
+    width: 98vw;
 }
 
 .divComments{
-    height: 50vh;
+    height: 95vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    background-color: green;
+    background-image: url("istockphoto-152119339-170667a.webp");
+    margin: 0;
 }
 
 
 .ulComments{
-    height: 28vh;
-    width: 22vw;
-    background-color: white;
+    height: 42vh;
+    width: 19vw;
     border: red dashed 2px;
     text-align: left;
     padding-top: 12px;
+    font-family: 'Lobster', cursive;
+    margin: 0;
+    background-color: rgba(14, 13, 13, 0.63);
+    color: #c7c7c7;
+}
 
+.wrapper{
+    background-image: url("istockphoto-152119339-170667a.webp");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
