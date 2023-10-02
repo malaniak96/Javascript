@@ -64,7 +64,7 @@ a{
     text-align: center;
     font-size: 13px;
     padding-top: 20px;
-    margin: auto;
+    margin: 0;
     background-color: rgba(14, 13, 13, 0.63);
     color: #c7c7c7;
 }
@@ -75,9 +75,9 @@ a{
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: auto;
     background-image: url("istockphoto-152119339-170667a.webp");
-    height: 94vh;
+    height: 94.2vh;
+    margin: 0;
 
 }
 
@@ -97,9 +97,9 @@ h2{
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 60vh;
+    height: 70vh;
     padding-left: 0;
-    margin-top: -80px;
+    margin: 0;
     background-image: url("istockphoto-152119339-170667a.webp");
 }
 

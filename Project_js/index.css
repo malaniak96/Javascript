@@ -1,25 +1,24 @@
 body {
     margin: 0;
 }
+
 .wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-image: url("istockphoto-152119339-170667a.webp");
-
 }
 
 .divMain{
     width: 50vw;
-    height: 94.5vh;
+    height: 94vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: white;
-    margin: auto;
     border: red solid 3px;
     background-color: rgba(14, 13, 13, 0.63);
     color: #c7c7c7;
@@ -37,14 +36,13 @@ body {
     font-size: 20px;
     border: red dashed 1px;
     background-color: white;
-    margin: auto;
     background-color: rgba(14, 13, 13, 0.63);
     color: #c7c7c7;
 
 }
 h1{
     width: 50vw;
-    height: 4vh;
+    height: 4.8vh;
     font-family: 'Lobster', cursive;
     color: white;
     font-weight: bolder;
